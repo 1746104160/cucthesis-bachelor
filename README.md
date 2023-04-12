@@ -160,3 +160,7 @@ make [{thesis|clean|cleanall}]
     # svg to pdf
     sudo rsvg-convert -f pdf <input_file> -o <output_file>
     ```
+
+## Acknowledgment
+
+A special thanks goes to [Jie Wu](https://github.com/CreeseWu).
