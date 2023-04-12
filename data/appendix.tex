@@ -1,0 +1,131 @@
+%!TeX root=../main.tex
+
+\setcounter{secnumdepth}{-1}
+\ctexset{
+  figurename = 附图,
+  tablename  = 附表,
+}%
+\appendix
+\chapter{附录}
+\par 附录可以插大图
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\textwidth]{figure.png}
+  \caption{工科生工作现场}
+  \label{fig:demo1}\appendixfigurecaption{\ref{fig:demo1}}{工科生工作现场}
+\end{figure}
+\newpage
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\textwidth]{figure.png}
+  \caption{工科生工作现场}
+  \label{fig:demo2}\appendixfigurecaption{\ref{fig:demo2}}{工科生工作现场}
+\end{figure}
+\newpage
+\par 建议在附录使用术语表
+\begin{center}
+  \begin{longtable}{ccp{10cm}}
+    \caption{术语表}
+    \label{tab:notation}\appendixtablecaption{\ref{tab:notation}}{术语表}                                                                                                                  \\
+    \toprule
+    序号       & 术语或缩略语      & 说明性定义                                                                                                                                            \\
+    \midrule
+    \endfirsthead
+    \toprule
+    序号       & 术语或缩略语      & 说明性定义                                                                                                                                            \\
+    \midrule
+    \endhead
+    \bottomrule
+    \endfoot
+
+    \rownumber & CVPR              & Computer Vision and Pattern Recognition，计算机视觉和模式识别（计算机视觉领域的顶级会议）                                                             \\
+    \rownumber & AI                & Artificial Intelligence，人工智能                                                                                                                     \\
+    \rownumber & API               & Application Programming Interface，应用程序接口                                                                                                       \\
+    \rownumber & JSX               & JavaScript XML，基于JavaScript的嵌入式的类似XML的语法                                                                                                 \\
+    \rownumber & TSX               & TypeScript XML，基于TypeScript的嵌入式的类似XML的语法                                                                                                 \\
+    \rownumber & NodeJS            & 能够在服务器端运行JavaScript的开放源代码、跨平台JavaScript运行环境                                                                                    \\
+    \rownumber & Python            & 解释型脚本语言，用于模型训练，网络服务搭建和数据处理计算                                                                                              \\
+    \rownumber & Linux             & 开源的类UNIX操作系统                                                                                                                                  \\
+    \rownumber & MCL               & \url{https://github.com/CUC-MCL}，中国传媒大学多媒体计算实验室                                                                                                                              \\
+    \rownumber & RESTful           & 符合REST(Representational State Transfer,表示性状态转移)原则的web应用程序架构风格                                                                     \\
+    \rownumber & Celery            & 使用Python编写的消息队列工具，可用于处理实时数据以及任务调度                                                                                          \\
+    \rownumber & SQL               & 用于访问和处理数据库的标准的计算机语言度                                                                                                              \\
+    \rownumber & PostgreSQL        & 高度可扩展的开源关系型数据库管理系统                                                                                                                  \\
+    \rownumber & MySQL             & 非常流行的开源关系型数据库管理系统                                                                                                                    \\
+    \rownumber & Redis             & 跨平台的key-系统                                                                                                               \\
+    \rownumber & SQLite            & 无服务器且无需配置的关系型数据库管理系统                                                                                                              \\
+    \rownumber & MongoDB           & 基于分布式文件存储的数据库管理系统                                                                                                                    \\
+    \rownumber & MyCat             & 开源的分布式关系型数据库中间件                                                                                                                        \\
+    \rownumber & Nginx             & 轻量级的web反向代理服务器                                                                                                                             \\
+    \rownumber & uWSGI             & 实现了Python专用的WSGI(WebServer Gateway Interface,网页服务器网关接口)通信协议和用于在uWSGI服务器与其他网络服务器的数据通信的uwsgi数据协议的web服务器 \\
+    \rownumber & PS                & Photo Shop，照片和设计软件                                                                                                                            \\
+    \rownumber & MLP               & Multilayer Perceptron，多层感知机                                                                                                                     \\
+    \rownumber & SOTA              & state-of-the-art，最先进                                                                                                                              \\
+    \rownumber & SASS              & Syntactically Awesome Style Sheets，CSS的预处理器                                                                                                     \\
+    \rownumber & SCSS              & Sass 3 引入新的语法，其语法完全兼容 CSS3，并且继承了 Sass 的强大功能                                                                                  \\
+    \rownumber & LESS              & Leaner Style Sheets，CSS的预处理器                                                                                                                    \\
+    \rownumber & Stylus            & 为 Nodejs 构建的富有表现力、健壮、功能丰富的 CSS 语言                                                                                                 \\
+    \rownumber & Element           & Vue的UI（User Interface，用户接口）框架                                                                                                               \\
+    \rownumber & Ant Design        & React的企业级UI设计框架                                                                                                                               \\
+    \rownumber & Vuex              & Vue的状态管理模式框架                                                                                                                                 \\
+    \rownumber & Vue Router        & Vue的路由框架                                                                                                                                         \\
+    \rownumber & axios             & 基于 Promise 的网络请求库                                                                                                                             \\
+    \rownumber & Vite              & 前端工具链                                                                                                                                            \\
+    \rownumber & Rollup            & JavaScript 模块打包工具                                                                                                                               \\
+    \rownumber & Terser            & JavaScript 代码的行业标准简化器                                                                                                                       \\
+    \rownumber & ESLint            & 插件化的JavaScript代码检测工具                                                                                                                        \\
+    \rownumber & Prettier          & 插件化的JavaScript代码格式化工具                                                                                                                      \\
+    \rownumber & CORS              & Cross-Origin Resource Sharing，跨域资源共享                                                                                                           \\
+    \rownumber & JWT               & JSON Web Token，轻量且URL（Uniform Resource Locator，统一资源定位符）安全的用于表示要在双方之间传输的声明                                             \\
+    \rownumber & SQLAlchemy        & Python SQL工具包和对象关系映射器，简称 SQLA                                                                                                           \\
+    \rownumber & ORM               & Object Relational Mapping，对象关系映射                                                                                                               \\
+    \rownumber & Apache            & Apache软件基金会的开源web服务器                                                                                                                       \\
+    \rownumber & grep              & global regular expression，用于查找文件里符合条件的字符串或正则表达式                                                                                 \\
+    \rownumber & JSON              & JavaScript Object Notation，JavaScript 对象表示法                                                                                                     \\
+    \rownumber & TTL               & Time To Leave，存活时间                                                                                                                               \\                                                                                                                          \\
+    \rownumber & MySQL Cluster     & 分布式MySQL集群                                                                                                                                       \\
+    \rownumber & Elastic Search    & 分布式、RESTful 风格的搜索和数据分析引擎                                                                                                              \\
+    \rownumber & IO                & input/output，信息处理系统与外部世界之间的通信                                                                                                        \\
+    \rownumber & DDoS              & Distributed Denial-of-Service，分布式拒绝服务                                                                                                         \\
+    \rownumber & socket            & 套接字                                                                                                                                                \\
+    \rownumber & HTTP              & Hypertext Transfer Protocol，超文本传输协议                                                                                                           \\
+    \rownumber & gzip              & 压缩文件格式                                                                                                                                          \\
+    \rownumber & TCP               & Transmission Control Protocol，传输控制协议                                                                                                           \\
+    \rownumber & TensorBoard       & 机器学习实验的可视化工具                                                                                                                              \\
+    \rownumber & ONNX Runtime      & 跨平台CPU机器学习模型加速器                                                                                                                           \\
+    \rownumber & TensorRT          & 英伟达高性能深度学习推理的优化器和运行时环境                                                                                                          \\
+    \rownumber & bash              & Linux 终端                                                                                                                                            \\
+    \rownumber & TorchServe        & 在生产环境中将PyTorch模型封装为服务的工具                                                                                                             \\
+    \rownumber & OSS               & Object Storage Service, 海量、安全、低成本、高可靠的云存储服务                                                                                        \\
+    \rownumber & CDN               & Content Delivery Network, 内容分发网络                                                                                                                \\
+    \rownumber & Maven             & 服务于Java平台的自动化构建工具                                                                                                                        \\
+    \rownumber & Swagger           & RESTful API 的 API 描述格式                                                                                                                           \\
+    \rownumber & marshmallow       & 将复杂的数据类型与Python数据类型相互转换                                                                                                              \\
+    \rownumber & webargs           & 解析和验证HTTP请求对象的Python库                                                                                                                      \\
+    \rownumber & apispec           & API 规范生成器                                                                                                                                        \\
+    \rownumber & HTML              & Hyper Text Markup Language，超文本标记语言                                                                                                            \\
+    \rownumber & HTTPS             & Hypertext Transfer Protocol Secure，超文本传输协议安全                                                                                                \\
+    \rownumber & URI               & Uniform Resource Identifier，统一资源标识符                                                                                                           \\
+    \rownumber & invoke            & Python命令行自动化脚本编写工具                                                                                                                        \\
+    \rownumber & crontab           & 用来定期执行程序的命令                                                                                                                                \\
+    \rownumber & XSS               & Cross-site scripting，跨站点脚本                                                                                                                      \\
+    \rownumber & SSL               & Secure Sockets Layer，安全套接字层                                                                                                                    \\
+    \rownumber & MITM              & Man-in-the-middle，中间人                                                                                                                             \\
+    \rownumber & SSO               & Single Sign On，单点登录                                                                                                                              \\
+    \rownumber & AES               & Advanced Encryption Standard，高级加密标准                                                                                                            \\
+    \rownumber & Jinja             & 快速、表达能力强、可扩展的模板引擎                                                                                                                    \\
+    \rownumber & blob              & binary large object，二进制大对象                                                                                                                     \\
+    \rownumber & Base64            & 基于 64 个可打印字符来表示二进制数据的表示方法                                                                                                        \\
+    \rownumber & OAuth             & Open Authorization，访问授权的开放标准                                                                                                                \\
+    \rownumber & FFmpeg            & 用来记录、转换数字音频、视频，并能将其转化为流的开源程序                                                                                              \\
+    \rownumber & WebAssembly       & 基于堆栈的虚拟机的二进制指令格式                                                                                                                      \\
+    \rownumber & SharedArrayBuffer & 共享阵列缓冲区                                                                                                                                        \\
+    \rownumber & QT                & 用于创建图形用户界面的跨平台应用程序                                                                                                                  \\
+    \rownumber & TS                & Transport Stream，传输流                                                                                                                              \\
+    \rownumber & MD                & Message-Digest Algorithm，消息摘要算法                                                                                                                \\
+    \rownumber & Token             & 身份验证令牌                                                                                                                                          \\
+    \rownumber & UUID              & Universally Unique Identifier，通用唯一标识符                                                                                                         \\
+    \rownumber & Jmeter            & Apache下用于负载功能和性能测试的开源工具                                                                                                              \\
+    \rownumber & GIL            & Global Interpreter Lock，全局解释器锁                                                                                                              \\
+  \end{longtable}
+\end{center}

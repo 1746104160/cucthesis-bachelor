@@ -1,0 +1,135 @@
+% !TeX root = ../main.tex
+% stepcounter 对应计数器自增，arabic 表示输出阿拉伯数字
+\setcounter{magicrownumbers}{0}
+\chapter{实验章节}
+\label{cha:4}
+\par 推荐使用\url{https://www.tablesgenerator.com/latex_tables}自动生成表格，辅之以适当地微调。
+\section{tabularx画表格自动换行}
+\begin{table}[htbp]
+    \caption{A table with automatic line breaks}
+    \begin{tabularx}{\textwidth}{|X|X|X|}
+    \hline
+    \textbf{Column 1} & \textbf{Column 2} & \textbf{Column 3} \\
+    \hline
+    This is a long text that will automatically break into multiple lines. & This is another long text that will also break into multiple lines. & This is a short text. \\
+    \hline
+    \end{tabularx}
+    \end{table}
+\section{longtable画跨页表格}
+\begin{center}
+    \begin{longtable}{|c|c|c|}
+        \caption{A long table}                                                \\
+        \hline
+        \textbf{Column 1} & \textbf{Column 2} & \textbf{Column 3}             \\
+        \hline
+        \endfirsthead
+
+        \multicolumn{3}{c}%
+        {{\bfseries \tablename\ \thetable{} -- continued from previous page}} \\
+        \hline
+        \textbf{Column 1} & \textbf{Column 2} & \textbf{Column 3}             \\
+        \hline
+        \endhead
+
+        \hline \multicolumn{3}{|r|}{{Continued on next page}}                 \\ \hline
+        \endfoot
+
+        \hline
+        \endlastfoot
+
+        Row \rownumber, Column 1   & Column 2   & Column 3               \\
+        \hline
+        Row \rownumber, Column 1   & Column 2   & Column 3               \\
+        \hline
+        Row \rownumber, Column 1   & Column 2   & Column 3               \\
+        \hline
+        Row \rownumber, Column 1   & Column 2   & Column 3               \\
+        \hline
+        Row \rownumber, Column 1   & Column 2   & Column 3               \\
+        \hline
+        Row \rownumber, Column 1   & Column 2   & Column 3               \\
+        \hline
+        Row \rownumber, Column 1   & Column 2   & Column 3               \\
+        \hline
+        Row \rownumber, Column 1   & Column 2   & Column 3               \\
+        \hline
+        Row \rownumber, Column 1   & Column 2   & Column 3               \\
+        \hline
+        Row \rownumber, Column 1  & Column 2  & Column 3              \\
+        \hline
+        Row \rownumber, Column 1  & Column 2  & Column 3              \\
+        \hline
+        Row \rownumber, Column 1  & Column 2  & Column 3              \\
+        \hline
+        Row \rownumber, Column 1  & Column 2  & Column 3              \\
+        \hline
+        Row \rownumber, Column 1  & Column 2  & Column 3              \\
+        \hline
+        Row \rownumber, Column 1  & Column 2  & Column 3              \\
+        \hline
+        Row \rownumber, Column 1  & Column 2  & Column 3              \\
+        \hline
+        Row \rownumber, Column 1  & Column 2  & Column 3              \\
+        \hline
+        Row \rownumber, Column 1  & Column 2  & Column 3              \\
+        \hline
+        Row \rownumber, Column 1  & Column 2  & Column 3              \\
+        \hline
+        Row \rownumber, Column 1  & Column 2  & Column 3              \\
+        \hline
+        Row \rownumber, Column 1  & Column 2  & Column 3              \\
+        \hline
+        Row \rownumber, Column 1  & Column 2  & Column 3              \\
+        \hline
+        Row \rownumber, Column 1  & Column 2  & Column 3              \\
+        \hline
+        Row \rownumber, Column 1  & Column 2  & Column 3              \\
+        \hline
+        Row \rownumber, Column 1  & Column 2  & Column 3              \\
+        \hline
+        Row \rownumber, Column 1  & Column 2  & Column 3              \\
+        \hline
+        Row \rownumber, Column 1  & Column 2  & Column 3              \\
+        \hline
+        Row \rownumber, Column 1  & Column 2  & Column 3              \\
+        \hline
+        Row \rownumber, Column 1  & Column 2  & Column 3              \\
+        \hline
+        Row \rownumber, Column 1  & Column 2  & Column 3              \\
+        \hline
+        Row \rownumber, Column 1  & Column 2  & Column 3              \\
+        \hline
+        Row \rownumber, Column 1  & Column 2  & Column 3              \\
+        \hline
+        Row \rownumber, Column 1  & Column 2  & Column 3              \\
+        \hline
+        Row \rownumber, Column 1  & Column 2  & Column 3              \\
+        \hline
+        Row \rownumber, Column 1  & Column 2  & Column 3              \\
+        \hline
+        Row \rownumber, Column 1  & Column 2  & Column 3              \\
+        \hline
+        Row \rownumber, Column 1  & Column 2  & Column 3              \\
+        \hline
+        Row \rownumber, Column 1  & Column 2  & Column 3              \\
+        \hline
+        Row \rownumber, Column 1  & Column 2  & Column 3              \\
+        \hline
+        Row \rownumber, Column 1  & Column 2  & Column 3              \\
+        \hline
+        Row \rownumber, Column 1  & Column 2  & Column 3              \\
+        \hline
+        Row \rownumber, Column 1  & Column 2  & Column 3              \\
+        \hline
+        Row \rownumber, Column 1  & Column 2  & Column 3              \\
+        \hline
+        Row \rownumber, Column 1  & Column 2  & Column 3              \\
+        \hline
+        Row \rownumber, Column 1  & Column 2  & Column 3              \\
+        \hline
+        Row \rownumber, Column 1  & Column 2  & Column 3              \\
+        \hline
+        Row \rownumber, Column 1  & Column 2  & Column 3              \\
+        \hline
+    \end{longtable}
+\end{center}

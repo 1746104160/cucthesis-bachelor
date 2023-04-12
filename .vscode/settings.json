@@ -1,0 +1,70 @@
+{
+  "cSpell.words": [
+  ],
+  "latex-workshop.intellisense.package.enabled": true,
+  "latex-workshop.intellisense.unimathsymbols.enabled": true,
+  "latex-workshop.latex.autoBuild.run": "onSave",
+  "latex-workshop.latex.build.forceRecipeUsage": true,
+  "latex-workshop.latex.recipes": [
+    {
+      "name": "latexmk for thuthesis",
+      "tools": ["xetex-thuthesis", "latexmk-xelatex"]
+    },
+    {
+      "name": "make thesis",
+      "tools": ["make-thesis"]
+    }
+  ],
+  "latex-workshop.latex.tools": [
+    {
+      "name": "xetex-thuthesis",
+      "command": "xetex",
+      "args": [
+        "-file-line-error",
+        "-halt-on-error",
+        "-interaction=nonstopmode",
+        "thuthesis.ins"
+      ],
+      "env": {}
+    },
+    {
+      "name": "latexmk-xelatex",
+      "command": "latexmk",
+      "args": [
+        "-xelatex",
+        "-file-line-error",
+        "-halt-on-error",
+        "-interaction=nonstopmode",
+        "-synctex=1",
+        "-pv-",
+        "-pvc-",
+        "-outdir=%OUTDIR%",
+        "%DOCFILE%"
+      ],
+      "env": {}
+    },
+    {
+      "name": "make-thesis",
+      "command": "make",
+      "args": [],
+      "env": {}
+    }
+  ],
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "**/*.code-search": true
+  },
+  "latex-workshop.bibtex-fields.sort.enabled": true,  // .bib每个item按field自定义排序
+	"latex-workshop.bibtex-fields.order": [
+    "author",
+    "booktitle",
+    "journal",
+    "year",
+    "volume",
+    "page"
+  ],
+  "latex-workshop.bibtex-format.sort.enabled": true,
+  "latex-workshop.intellisense.citation.backend": "biblatex",
+  "ltex.language": "zh-CN"
+}

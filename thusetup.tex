@@ -1,0 +1,89 @@
+% !TeX root = ./main.tex
+
+% 论文基本信息配置
+
+\thusetup{
+  %******************************
+  % 注意：
+  %   1. 配置里面不要出现空行
+  %   2. 不需要的配置信息可以删除
+  %******************************
+  %
+  % 标题
+  %   可使用“\\”命令手动控制换行
+  %
+  title  = {题目},
+  title* = {Your title},
+  include-spine = false,
+}
+
+% 载入所需的宏包
+
+% 定理类环境宏包
+\usepackage{amsthm}
+% 也可以使用 ntheorem
+% \usepackage[amsmath,thmmarks,hyperref]{ntheorem}
+
+\thusetup{
+  %
+  % 数学字体
+  % math-style = GB,  % GB | ISO | TeX
+  math-font  = xits,  % sitx | xits | libertinus
+}
+
+% 可以使用 nomencl 生成符号和缩略语说明
+% \usepackage{nomencl}
+% \makenomenclature
+
+% 表格加脚注
+\usepackage{threeparttable}
+
+% 表格中支持跨行
+\usepackage{multirow}
+
+% 固定宽度的表格。
+\usepackage{tabularx}
+
+% 跨页表格
+\usepackage{longtable}
+
+% 算法
+% \usepackage{algorithm}
+% \usepackage{algorithmic}
+\usepackage[ruled, vlined, linesnumbered]{algorithm2e}
+% 量和单位
+\usepackage{siunitx}
+
+% 参考文献使用 BibTeX + natbib 宏包
+% 本科生参考文献的著录格式
+\usepackage[sort]{natbib}
+\bibliographystyle{thuthesis-bachelor}
+
+% 定义所有的图片文件在 figures 子目录下
+\graphicspath{{figures/}}
+
+% 数学命令
+\makeatletter
+\newcommand\dif{%  % 微分符号
+  \mathop{}\!%
+  \ifthu@math@style@TeX
+    d%
+  \else
+    \mathrm{d}%
+  \fi
+}
+\makeatother
+
+% hyperref 宏包在最后调用
+\usepackage{hyperref}
+% 多个引用
+\usepackage{cleveref}
+\crefname{theorem}{定理}{定理}
+\crefname{lemma}{引理}{引理}
+\crefname{definition}{定义}{定义}
+\crefname{figure}{图}{图}
+\crefname{table}{表}{表}
+\crefname{algorithm}{算法}{算法}
+\crefname{equation}{公式}{公式}
+\crefname{section}{}{}
+\newcommand{\crefrangeconjunction}{至}

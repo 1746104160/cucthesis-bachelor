@@ -1,0 +1,91 @@
+% !TeX root = ../main.tex
+
+\chapter{核心章节}
+\label{cha:3}
+\section{tikz绘图}
+\par tikz\footnote{\url{http://mirrors.ctan.org/graphics/pgf/base/doc/pgfmanual.pdf}}是latex的绘图宏包，建议参考YunYouJun大佬硕士论文模板\url{https://github.com/YunYouJun/cucthesis}里的绘制方式，其生成的pdf在\url{https://yunyoujun.github.io/cucthesis/}。
+\section{插入plantuml绘图}
+\par plantuml\footnote{\url{https://plantuml.com/}}可以快速绘制多种图表，如时序\cref{fig:plantuml_tex}，环境配置与操作详见README.md。
+\subsection{方案一：直接导出tex插入（推荐）}
+\begin{figure}[htbp]
+    \centering
+    \resizebox{0.8\textwidth}{!}{\input{figures/plantuml/sequence.tex}}
+    \caption{plantuml画时序图}
+    \label{fig:plantuml_tex}
+\end{figure}
+\subsection{方案二：导出pdf插入}
+\par 此时需要准备好相关依赖jar包。
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{plantuml/sequence.pdf}
+    \caption{graphviz画DFA}
+    \label{fig:plantuml_pdf}
+\end{figure}
+\section{插入graphviz绘图}
+\par graphviz\footnote{\url{https://graphviz.org/}}可以绘制更多类型的图表，plantuml就是基于graphviz实现的，建议参考graphviz的画廊\url{https://www.graphviz.org/gallery/}，环境配置与操作详见README.md。
+\subsection{方案一：导出xdot格式后用dot2tex生成tex后插入}
+\par dot2tex稳定性较差，涉及中文等编码问题的情况下可能在WSL中会支持而Windows中不支持。
+\begin{figure}[htbp]
+    \centering
+    \resizebox{0.8\textwidth}{!}{\input{figures/graphviz/dfa.tex}}
+    \caption{graphviz画DFA}
+    \label{fig:graphviz_tex}
+\end{figure}
+\subsection{方案二：直接导出pdf插入（推荐）}
+\par graphviz可以直接导出PDF。如果嵌入plantuml内部，此时plantuml导出PDF不再需要相关依赖jar包，但是不能导出tex。
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{graphviz/dfa.pdf}
+    \caption{graphviz画DFA}
+    \label{fig:graphviz_pdf}
+\end{figure}
+\section{插入svg}
+\subsection{方案一：inkscape}
+\par inkscape几乎兼容大部分svg图表，但是深层文字可能不会识别被转为图片。
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{svg/er_inkscape.pdf}
+    \caption{inkscape转svgER图为pdf}
+    \label{fig:svg_pdf}
+\end{figure}
+\begin{figure}[htbp]
+    \centering
+    \resizebox{0.8\textwidth}{!}{\input{figures/svg/er.tex}}
+    \caption{graphviz画DFA}
+    \label{fig:svg_tex}
+\end{figure}
+\subsection{方案二：rsvg\_convert}
+\par rsvg\_convert在WSL中可以通过librsvg2-bin快速安装，可以确保文字不会被识别为图片，但是对中文不支持。Windows下的rsvg\_convert需要基于chocolatey进行安装，相对较为复杂，此时支持中文。
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{svg/er_rsvg.pdf}
+    \caption{inkscape转svgER图为pdf}
+    \label{fig:svg_pdf_chocolatey}
+\end{figure}
+\section{插入算法}
+\par 本模板支持使用更常用的algorithm2e\footnote{\url{http://mirrors.ctan.org/macros/latex/contrib/algorithm2e/doc/algorithm2e.pdf}}宏包插入算法，如\cref{alg:gcd}所示。
+\begin{algorithm}[htbp]
+    \caption{最大公约数}
+    \label{alg:gcd}
+    \begin{small}
+        \SetAlgoLined
+        \KwIn{Two positive integers $a$ and $b$}
+        \KwOut{The greatest common divisor of $a$ and $b$}
+        \While{$b \neq 0$}{
+            $r \leftarrow a \bmod b$\;
+            $a \leftarrow b$\;
+            $b \leftarrow r$\;
+        }
+        \Return{$a$}\;
+    \end{small}
+\end{algorithm}
+\section{插入代码}
+\par 本模板支持插入代码，且可以对常用语言进行基本高亮。
+\begin{lstlisting}[language=bash,label=code:bash]
+# 查找运行的python命令
+ps -ef | grep python
+# 杀死全部占用某端口的程序
+netstat -tunlp | grep $1 | awk '{print $7}' | tr '/' '\n' | head -n 1 | xargs kill -9
+\end{lstlisting}
+\par 本模板还支持插入外部代码。
+\lstinputlisting[language=Perl,keywordstyle=\color{blue},commentstyle=\color{green},stringstyle=\color{red}]{example.pl}

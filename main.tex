@@ -1,0 +1,63 @@
+% !TeX encoding = UTF-8
+% !TeX program = xelatex
+% !TeX spellcheck = en_US
+
+\documentclass[degree=master]{thuthesis}
+  % 语言 language
+  %   chinese（默认）| english
+  % 字体库 fontset
+  %   windows | mac | fandol | ubuntu
+  % 建议终版使用 Windows 平台的字体编译
+
+% 论文基本配置，加载宏包等全局配置
+\input{thusetup}
+% custom for figures
+\usepackage{cuc-custom}
+\begin{document}
+
+% 封面
+\includepdf[pages={1}]{cuc/cuc-thesis-cover.pdf}
+% 声明
+\includepdf[pages={1}]{cuc/statement.pdf}
+
+% 摘要与目录部分罗马数字
+\frontmatter
+
+\input{data/abstract}
+
+% 目录
+\tableofcontents
+% 下面内容按需添加，如不想出现在目录里，需要在dtx文件里将\thu@chapter*改成\chapter*然后重新编译
+% 研究生插图和附表清单，本科生可以注释
+\listoffiguresandtables
+% 仿照研究生插图和附表清单，实现了附录的插图和附表清单
+\listofappendixfiguresandtables
+% 算法
+\listofalgorithms
+% 公式
+\listofequations
+正文部分
+\mainmatter
+
+% 论文一般共五章
+\input{data/chap01}
+\input{data/chap02}
+\input{data/chap03}
+\input{data/chap04}
+\input{data/chap05}
+
+
+% 其他部分
+\backmatter
+
+% 参考文献使用 BibTeX 编译
+\bibliography{ref/refs}
+
+% 附录
+\appendix
+% \input{data/appendix}
+% 致谢
+% 交叉评阅时注释掉这里再生成
+\input{data/acknowledgements}
+
+\end{document}
